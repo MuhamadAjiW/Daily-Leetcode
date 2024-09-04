@@ -3,23 +3,18 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    vector<vector<int>> construct2DArray(vector<int> &original, int m, int n)
-    {
+    vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
         int len = original.size();
-        if (len != m * n)
-        {
+        if (len != m * n) {
             return {};
         }
         vector<vector<int>> retval(m, vector<int>(n));
 
         int k = 0;
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 retval[i][j] = original[k++];
             }
         }
@@ -28,23 +23,20 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     Solution sol;
     vector<vector<int>> res;
     vector<int> original = {
-        1, 2, 3};
+        1, 2, 3 };
     int m = 1;
     int n = 3;
 
     res = sol.construct2DArray(original, m, n);
 
     cout << "[" << endl;
-    for (auto v : res)
-    {
+    for (auto v : res) {
         cout << "[";
-        for (auto i : v)
-        {
+        for (auto i : v) {
             cout << i << ",";
         }
         cout << "]," << endl;

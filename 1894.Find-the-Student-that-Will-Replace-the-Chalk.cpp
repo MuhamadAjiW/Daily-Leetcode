@@ -3,22 +3,18 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    int chalkReplacer(vector<int> &chalk, int k)
-    {
+    int chalkReplacer(vector<int>& chalk, int k) {
         long long sum = 0;
-        for (int i : chalk)
-        {
+        for (int i : chalk) {
             sum += i;
         }
 
         long long remainder = k % sum;
 
         long long i = 0;
-        while (remainder >= 0)
-        {
+        while (remainder >= 0) {
             remainder -= chalk[i];
             i++;
         }
@@ -28,9 +24,8 @@ public:
     }
 };
 
-int main()
-{
-    vector<int> chalk = {3, 4, 1, 2};
+int main() {
+    vector<int> chalk = { 3, 4, 1, 2 };
     int k = 25;
 
     Solution sol;

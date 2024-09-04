@@ -5,12 +5,10 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
     // Original answer
-    // string fractionAddition(string expression)
-    // {
+    // string fractionAddition(string expression) {
     //     long long ten_fac = 3628800;
     //     long long len = expression.length();
     //     long long num = 1;
@@ -19,16 +17,14 @@ public:
     //     long long sum = 0;
     //     stringstream output_str;
 
-    //     if (expression[index] == '-')
-    //     {
+    //     if (expression[index] == '-') {
     //         index++;
     //         num = -1;
     //     }
 
     //     num *= expression[index] - 48;
     //     index++;
-    //     if (expression[index] == 48)
-    //     {
+    //     if (expression[index] == 48) {
     //         num *= 10;
     //         index++;
     //     }
@@ -36,29 +32,25 @@ public:
 
     //     denum *= expression[index] - 48;
     //     index++;
-    //     if (expression[index] == 48)
-    //     {
+    //     if (expression[index] == 48) {
     //         denum *= 10;
     //         index++;
     //     }
 
     //     sum += ten_fac / denum * num;
 
-    //     while (index < len)
-    //     {
+    //     while (index < len) {
     //         num = 1;
     //         denum = 1;
 
-    //         if (expression[index] == '-')
-    //         {
+    //         if (expression[index] == '-') {
     //             num = -1;
     //         }
     //         index++;
 
     //         num *= expression[index] - 48;
     //         index++;
-    //         if (expression[index] == 48)
-    //         {
+    //         if (expression[index] == 48) {
     //             num *= 10;
     //             index++;
     //         }
@@ -66,8 +58,7 @@ public:
 
     //         denum *= expression[index] - 48;
     //         index++;
-    //         if (expression[index] == 48)
-    //         {
+    //         if (expression[index] == 48) {
     //             denum *= 10;
     //             index++;
     //         }
@@ -77,40 +68,32 @@ public:
 
     //     num = sum;
     //     denum = ten_fac;
-    //     for (int i = 0; i < 8; i++)
-    //     {
-    //         if (num % 2 == 0 && denum % 2 == 0)
-    //         {
+    //     for (int i = 0; i < 8; i++) {
+    //         if (num % 2 == 0 && denum % 2 == 0) {
     //             num /= 2;
     //             denum /= 2;
     //         }
     //         else
     //             break;
     //     }
-    //     for (int i = 0; i < 4; i++)
-    //     {
-    //         if (num % 3 == 0 && denum % 3 == 0)
-    //         {
+    //     for (int i = 0; i < 4; i++) {
+    //         if (num % 3 == 0 && denum % 3 == 0) {
     //             num /= 3;
     //             denum /= 3;
     //         }
     //         else
     //             break;
     //     }
-    //     for (int i = 0; i < 2; i++)
-    //     {
-    //         if (num % 5 == 0 && denum % 5 == 0)
-    //         {
+    //     for (int i = 0; i < 2; i++) {
+    //         if (num % 5 == 0 && denum % 5 == 0) {
     //             num /= 5;
     //             denum /= 5;
     //         }
     //         else
     //             break;
     //     }
-    //     for (int i = 0; i < 1; i++)
-    //     {
-    //         if (num % 7 == 0 && denum % 7 == 0)
-    //         {
+    //     for (int i = 0; i < 1; i++) {
+    //         if (num % 7 == 0 && denum % 7 == 0) {
     //             num /= 7;
     //             denum /= 7;
     //         }
@@ -124,8 +107,7 @@ public:
     // }
 
     // Fast answer
-    string fractionAddition(string expression)
-    {
+    string fractionAddition(string expression) {
         stringstream ss(expression);
         char op;
         int a, b, c, d;
@@ -134,8 +116,7 @@ public:
         ss >> op;
         ss >> b;
 
-        while (ss >> c)
-        {
+        while (ss >> c) {
             ss >> op;
             ss >> d;
             num = a * d + b * c;
@@ -152,8 +133,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     string input;
     cin >> input;
 
