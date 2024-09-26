@@ -12,14 +12,14 @@ using namespace std;
 //         int len = words.size();
 //         vector<int> retval(len);
 //         unordered_map<string, int> map;
-        
+
 //         for (string word : words){
 //             for (size_t j = 1; j <= word.size(); j++){
 //                 map[word.substr(0, j)]++;
 //                 // cout << subw << endl;
 //             }  
 //         }
-        
+
 
 //         for (size_t i = 0; i < len; i++){
 //             string word = words[i];
@@ -37,13 +37,13 @@ using namespace std;
 // };
 
 class Trie {
-    public:
-        int val;
-        unordered_map<char, Trie> map;
+public:
+    int val;
+    unordered_map<char, Trie> map;
 
-        Trie(){
-            this->val = 0;
-        }
+    Trie() {
+        this->val = 0;
+    }
 };
 
 class Solution {
@@ -53,20 +53,20 @@ public:
         vector<int> retval(len);
 
         Trie root;
-        for (string word : words){
+        for (string word : words) {
             Trie* tree = &root;
-            for (size_t i = 0; i < word.size(); i++){
+            for (size_t i = 0; i < word.size(); i++) {
                 char c = word[i];
                 tree = &(tree->map[c]);
                 tree->val++;
             }
         }
 
-        for (size_t i = 0; i < len; i++){
+        for (size_t i = 0; i < len; i++) {
             string word = words[i];
             Trie* tree = &root;
             int score = 0;
-            for (size_t i = 0; i < word.size(); i++){
+            for (size_t i = 0; i < word.size(); i++) {
                 char c = word[i];
                 tree = &(tree->map[c]);
                 score += tree->val;
@@ -79,7 +79,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution sol;
     vector<string> words = {
         "abc","ab","bc","b"
@@ -87,7 +87,7 @@ int main(){
 
     vector<int> res = sol.sumPrefixScores(words);
 
-    for(int i : res){
+    for (int i : res) {
         cout << i << " ";
     }
 
