@@ -67,5 +67,6 @@ int main() {
     // obj->book(20, 30);
     obj->out();
 
+    delete obj;
     return 0;
 }

@@ -90,5 +90,6 @@ int main() {
 
     obj->out();
 
+    delete obj;
     return 0;
 }
